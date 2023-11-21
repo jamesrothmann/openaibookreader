@@ -19,6 +19,8 @@ openai.api_key = st.secrets["api_key"]
 MAX_RETRIES = 3
 RETRY_DELAY_SECONDS = 5  # Time to wait between retries
 
+client = OpenAI()
+
 def openaiapi(input_text, prompt_text):
     messages = [
         {"role": "system", "content": prompt_text},
