@@ -27,7 +27,7 @@ def openaiapi(input_text, prompt_text):
 
     for attempt in range(MAX_RETRIES):
         try:
-            response = openai.ChatCompletion.create(
+            response = client.chat.completions.create(
                 model="gpt-3.5-turbo-1106",
                 messages=messages,
                 temperature=0,
