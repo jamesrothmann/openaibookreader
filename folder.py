@@ -15,12 +15,12 @@ import tempfile
 import shutil
 
 # Set up the OpenAI API key
-openai.api_key = st.secrets["api_key"]
+openai_api_key = st.secrets["api_key"]
 
 MAX_RETRIES = 3
 RETRY_DELAY_SECONDS = 5  # Time to wait between retries
 
-client = OpenAI()
+client = OpenAI(api_key=openai_api_key)
 
 def openaiapi(input_text, prompt_text):
     messages = [
